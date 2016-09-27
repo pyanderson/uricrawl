@@ -30,7 +30,6 @@ another linux distro :P. If you still wanna/need using windows, you can accesses
 amazing `site <http://www.lfd.uci.edu/~gohlke/pythonlibs/>`_ (This saved my life sometimes when I was windows
 user :shame:). Just download the packages WHL files corresponding to you python/system
 version and install using pip.
-.. code-block:: console
 
     > pip install package_name.whl or python3 -m pip install package_name.whl
 
