@@ -52,6 +52,7 @@ but you can set you own templates using **-t or --template** optioni with paths
 of templates (see more in **Template** topic):
 
 .. code-block:: console
+
     $ uritool 1450 -t mytemplate.cpp ~/mytemplate.py /home/thekiller/Documentos/myuritemplates/mytemplate.c
     $ ls
 
@@ -61,6 +62,7 @@ If you set **-t** option you can set **-nd or --no-default** option to tool
 don't generate code files using default templates.
 
 .. code-block:: console
+
     $ uritool 1450 -t mytemplate.cpp -nd
     $
 
@@ -70,6 +72,7 @@ Default problems languages crawleds is English, but you can use **-l or
 --language** to set language, values options: [en, pt, es]
 
 .. code-block:: console
+
     $ uritool 1450 -l pt
     $
 
@@ -79,6 +82,7 @@ You can choose one or more **-pl or --programming-language** in [c, cpp, py]
 options to tool render only this templates.
 
 .. code-block:: console
+
     $ uritool 1450 -pl cpp py
     $
 
@@ -90,6 +94,7 @@ string with the pattern, two tags are avaiable for this (number and title), my
 pattern is: {{number}}-{{title}}, just reorder like you want :D
 
 .. code-block:: console
+
     $ uritool 1450 -np {{number}}
     $
 
