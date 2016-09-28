@@ -1,5 +1,10 @@
 import os
+import sys
 from jinja2 import Environment, FileSystemLoader
+
+
+def cast_for_python2(x):
+    return x.encode('ascii', 'replace')
 
 
 def normalize_text(list_extracted, colsize=50):
@@ -8,7 +13,12 @@ def normalize_text(list_extracted, colsize=50):
     words = text.split()
     result = []
     line = ""
+    if sys.version_info[0] > 2:
+        cast = str
+    else:
+        cast = cast_for_python2
     for w in words:
+        w = cast(w)
         if len(line) + len(w) > colsize:
             result.append(line[:-1])
             line = w + ' '

@@ -5,7 +5,7 @@ Uri Online Judge Tool (UriTool)
 Command Line Tool for crawl and render templates for Problems
 -------------------------------------------------------------
 
-**incomplete, is not python2 compatible yet, and need more tests**
+**incomplet, need automatized tests**
 
 Features
 ========
@@ -19,7 +19,7 @@ Installation
 ============
 .. code-block:: console
 
-    $ python3 -m pip install git+https://github.com/pyanderson/uritool
+    $ pip install git+https://github.com/pyanderson/uritool
 
 Windows Users
 -------------
