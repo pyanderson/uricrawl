@@ -120,6 +120,15 @@ pattern is: {{number}}-{{title}}, just reorder like you want :D.
     2016-09-27 22:56:43 [problemspider] INFO: Code files for 1644 problem were generated.
     $ ls
     1644.c  1644.cpp  1644.py
+    $ uritool 1644 -np {{title}}
+    2016-09-27 23:11:51 [problemspider] INFO: Code files for 1644 problem were generated.
+    $ ls
+    1644.c  1644.cpp  1644.py  decode-the-strings.c  decode-the-strings.cpp  decode-the-strings.py
+    $ uritool 1644 -np {{title}}_{{number}}
+    2016-09-27 23:13:35 [problemspider] INFO: Code files for 1644 problem were generated.
+    $ ls
+    1644.c    1644.py                    decode-the-strings_1644.cpp  decode-the-strings.c    decode-the-strings.py
+    1644.cpp  decode-the-strings_1644.c  decode-the-strings_1644.py   decode-the-strings.cpp
 
 Template
 ========
