@@ -139,11 +139,11 @@ So custom your templates using jinja2 syntaxe in the better way you want.
 
 Example Template
 ----------------------------
-`template.cpp <https://github.com/pyanderson/uritool/tree/master/uritool/templates/template.cpp>`_
+`template.cpp <https://github.com/pyanderson/uritool/blob/master/uritool/templates/template.cpp>`_
 
 Result
 ------
-`1640.cpp <https://github.com/pyanderson/uritool/tree/master/uritool/examples/1640.cpp>`_
+`1640.cpp <https://github.com/pyanderson/uritool/blob/master/examples/1640.cpp>`_
 
 License
 -------
