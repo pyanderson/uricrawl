@@ -31,17 +31,21 @@ class ProblemSpider(scrapy.Spider):
         }
         filename = gen_filename(self.name_pattern, context)
         if self.default_template:
+            dirname = os.path.dirname(__file__)
             if 'c' in self.programming_languages:
                 context['filename'] = filename + '.c'
-                create_file(context, 'template.c')
+                create_file(context,
+                            os.path.join(dirname, 'templates/template.c'))
             if 'cpp' in self.programming_languages:
                 context['filename'] = filename + '.cpp'
-                create_file(context, 'template.cpp')
+                create_file(context,
+                            os.path.join(dirname, 'templates/template.cpp'))
             if 'py' in self.programming_languages:
                 context['filename'] = filename + '.py'
-                create_file(context, 'template.py')
+                create_file(context,
+                            os.path.join(dirname, 'templates/template.py'))
         for template in self.templates:
-            filename, file_extension = os.path.splitext(template)
+            _filename, file_extension = os.path.splitext(template)
             context['filename'] = filename + file_extension
             create_file(context, template)
         print('%s [%s] INFO: Code files for %s problem were generated.'

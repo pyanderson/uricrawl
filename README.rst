@@ -65,7 +65,11 @@ of templates (see more in **Template** topic):
 .. code-block:: console
 
     $ uritool 1450 -t mytemplate.cpp ~/mytemplate.py /home/thekiller/Documentos/myuritemplates/mytemplate.c
+    2016-09-27 22:34:39 [problemspider] INFO: Code files for 1450 problem were generated.
     $ ls
+    1450-ramesses-games.c    1450-ramesses-games.py   mytemplate.cpp
+    1450-ramesses-games.cpp
+
 
 Without Default Template
 ------------------------
@@ -74,8 +78,10 @@ don't generate code files using default templates.
 
 .. code-block:: console
 
-    $ uritool 1450 -t mytemplate.cpp -nd
-    $
+    $ uritool 1780 -t mytemplate.cpp -nd
+    2016-09-27 22:49:38 [problemspider] INFO: Code files for 1780 problem were generated.
+    $ ls
+    1780-robots-formation.cpp  mytemplate.cpp
 
 Language
 --------
@@ -84,8 +90,10 @@ Default problems languages crawleds is English, but you can use **-l or
 
 .. code-block:: console
 
-    $ uritool 1450 -l pt
-    $
+    $ uritool 1388 -l pt
+    2016-09-27 22:52:21 [problemspider] INFO: Code files for 1388 problem were generated.
+    $ ls
+    1388-onde-estao-as-bolhas.c  1388-onde-estao-as-bolhas.cpp  1388-onde-estao-as-bolhas.py
 
 Programming Language
 --------------------
@@ -94,20 +102,24 @@ options to tool render only this templates.
 
 .. code-block:: console
 
-    $ uritool 1450 -pl cpp py
-    $
+    $ uritool 1533 -pl cpp py
+    2016-09-27 22:54:53 [problemspider] INFO: Code files for 1533 problem were generated.
+    $ ls
+    1533-detective-watson.cpp  1533-detective-watson.py
 
 Name Pattern
 ------------
 Probably you don't like my filename pattern, so, usign **-np or
 --name-pattern** option you can format the filenames generated, just set a
 string with the pattern, two tags are avaiable for this (number and title), my
-pattern is: {{number}}-{{title}}, just reorder like you want :D
+pattern is: {{number}}-{{title}}, just reorder like you want :D.
 
 .. code-block:: console
 
-    $ uritool 1450 -np {{number}}
-    $
+    $ uritool 1644 -np {{number}}
+    2016-09-27 22:56:43 [problemspider] INFO: Code files for 1644 problem were generated.
+    $ ls
+    1644.c  1644.cpp  1644.py
 
 Template
 ========
@@ -115,18 +127,123 @@ All rended templates (defaults and custom) has some variables in context:
 
 * number
 * title
-* description
+* description - A list of lines for all problem description.
 * url
-* _input
-* _output
+* _input - A list of lines for all problem input.
+* _output - A list of lines for all problem output.
 * filename
 * created
 * author
 
 So custom your templates using jinja2 syntaxe in the better way you want.
 
-Example
--------
+Example default template.cpp
+----------------------------
+    /*
+     * =====================================================================================
+     *
+     *       Filename:  {{ filename }}
+     *
+     *            Url:  {{ url }}
+     *
+    {%- for line in description -%}
+        {%- if loop.index == 1 %}
+     *    Description:  {{ line }}
+        {%- else %}
+     *					{{ line }}
+        {%- endif %}
+    {%- endfor %}
+     *
+    {%- for line in _input -%}
+        {%- if loop.index == 1 %}
+     *          Input:  {{ line }}
+        {%- else %}
+     *					{{ line }}
+        {%- endif %}
+    {%- endfor %}
+     *
+    {%- for line in _output -%}
+        {%- if loop.index == 1 %}
+     *         Output:  {{ line }}
+        {%- else %}
+     *					{{ line }}
+        {%- endif %}
+    {%- endfor %}
+     *
+     *        Version:  1.0
+     *        Created:  {{ created }}
+     *       Revision:  none
+     *       Compiler:  g++
+     *
+     *         Author:  {{ author }}
+     *
+     * =====================================================================================
+     */
+    #include <iostream>
+
+    using namespace std;
+
+    int main(){
+        return 0;
+    }
+
+Result
+------
+    /*
+     * =====================================================================================
+     *
+     *       Filename:  1644.cpp
+     *
+     *            Url:  https://www.urionlinejudge.com.br/repository/UOJ_1644_en.html
+     *
+     *    Description:  Bruce Force has had an interesting idea how to
+     *					encode strings. The following is the description
+     *					of how the encoding is done: Let x1,x2,...,xn be
+     *					the sequence of characters of the string to be
+     *					encoded. Choose an integer M and N pairwise
+     *					distinct numbers p1,p2,...,pn from the set {1, 2,
+     *					..., N} (a permutation of the numbers 1 to N).
+     *					Repeat the following step m times. For 1 ≤ i ≤ N
+     *					set yi to xpi, and then for 1 ≤ i ≤ N replace xi
+     *					by yi. For example, when we want to encode the
+     *					string "hello", and we choose the value M = 3 and
+     *					the permutation 2, 3, 1, 5, 4, the data would be
+     *					encoded in 3 steps: "hello" -> "elhol" -> "lhelo"
+     *					-> "helol". Bruce gives you the encoded strings,
+     *					and the numbers M and p1, ..., pn used to encode
+     *					these strings. He claims that because he used huge
+     *					numbers m for encoding, you will need a lot of
+     *					time to decode the strings. Can you disprove this
+     *					claim by quickly decoding the strings?
+     *
+     *          Input:  The input contains several test cases. Each test
+     *					case starts with a line containing two numbers N
+     *					and M (1 ≤ N ≤ 80, 1 ≤ M ≤ 109). The following
+     *					line consists of N pairwise different numbers
+     *					p1,...,pn (1 ≤ pi ≤ N). The third line of each
+     *					test case consists of exactly N characters, and
+     *					represent the encoded string. The last test case
+     *					is followed by a line containing two zeros.
+     *
+     *         Output:  For each test case, print one line with the
+     *					decoded string.
+     *
+     *        Version:  1.0
+     *        Created:  09/27/16 23:01:09
+     *       Revision:  none
+     *       Compiler:  g++
+     *
+     *         Author:  thekiller
+     *
+     * =====================================================================================
+     */
+    #include <iostream>
+
+    using namespace std;
+
+    int main(){
+        return 0;
+    }
 
 License
 -------

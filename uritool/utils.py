@@ -19,9 +19,8 @@ def normalize_text(list_extracted, colsize=50):
 
 
 def create_file(context, template):
-    env = Environment(loader=FileSystemLoader(
-        os.path.join(os.path.dirname(__file__), 'templates')))
-    template = env.get_template(template)
+    env = Environment(loader=FileSystemLoader(os.path.dirname(template)))
+    template = env.get_template(os.path.basename(template))
     with open(context['filename'], 'w') as f:
         f.write(template.render(**context))
 
