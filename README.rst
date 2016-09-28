@@ -98,7 +98,7 @@ Default problems languages crawleds is English, but you can use **-l or
 Programming Language
 --------------------
 You can choose one or more **-pl or --programming-language** in [c, cpp, py]
-options to tool render only this templates.
+options to tool render only this templates(this option only has effect in default templates).
 
 .. code-block:: console
 
@@ -129,6 +129,17 @@ pattern is: {{number}}-{{title}}, just reorder like you want :D.
     $ ls
     1644.c    1644.py                    decode-the-strings_1644.cpp  decode-the-strings.c    decode-the-strings.py
     1644.cpp  decode-the-strings_1644.c  decode-the-strings_1644.py   decode-the-strings.cpp
+
+Full Example
+------------
+
+.. code-block:: console
+
+    $ uritool 1026 1754 -t mytemplate.cpp -nd -l pt -np {{number}}-_-{{title}}
+    2016-09-27 23:22:47 [problemspider] INFO: Code files for 1026 problem were generated.
+    2016-09-27 23:22:47 [problemspider] INFO: Code files for 1754 problem were generated.
+    $ ls
+    1026-_-carrega-ou-nao-carrega.cpp  1754-_-a-sala-do-tempo.cpp  mytemplate.cpp
 
 Template
 ========
