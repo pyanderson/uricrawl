@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='uritool',
-      version='0.1',
+      version='0.2',
       description='Command Line Tool for crawl and '
       'render templates for Problems for URI (Uri Online Judge)',
       url='https://github.com/pyanderson/uritool',
