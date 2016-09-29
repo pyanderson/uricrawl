@@ -35,15 +35,15 @@ class ProblemSpider(scrapy.Spider):
             if 'c' in self.programming_languages:
                 context['filename'] = filename + '.c'
                 create_file(context,
-                            os.path.join(dirname, 'templates/template.c'))
+                            os.path.join(dirname, 'template.c'))
             if 'cpp' in self.programming_languages:
                 context['filename'] = filename + '.cpp'
                 create_file(context,
-                            os.path.join(dirname, 'templates/template.cpp'))
+                            os.path.join(dirname, 'template.cpp'))
             if 'py' in self.programming_languages:
                 context['filename'] = filename + '.py'
                 create_file(context,
-                            os.path.join(dirname, 'templates/template.py'))
+                            os.path.join(dirname, 'template.py'))
         for template in self.templates:
             _filename, file_extension = os.path.splitext(template)
             context['filename'] = filename + file_extension
