@@ -159,7 +159,7 @@ So custom your templates using jinja2 syntaxe in the better way you want.
 
 Example Template
 ----------------------------
-`template.cpp <https://github.com/pyanderson/uritool/blob/master/uritool/templates/template.cpp>`_
+`template.cpp <https://github.com/pyanderson/uritool/blob/master/uritool/template.cpp>`_
 
 Result
 ------
