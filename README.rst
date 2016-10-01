@@ -1,30 +1,38 @@
-===============================
-Uri Online Judge Tool (UriTool)
-===============================
+===================================
+Uri Online Judge Crawler (UriCrawl)
+===================================
 -------------------------------------------------------------
 Command Line Tool for crawl and render templates for Problems
 -------------------------------------------------------------
 
 **incomplet, need automatized tests**
+**python 3 recommended**
 
 Features
 ========
 
-With **uritool** you add to your enviroment a  **command line tool**
-that streamlines the file generation of problems using a template.
+With **uricrawl** you add to your enviroment a  useful **command line tool**
+for file generation of problems using templates.
 
-**uritool** use `scrapy <https://scrapy.org/>`_ and `jinja2 <http://jinja.pocoo.org/docs/dev/>`_.
+**uricrawl** use `scrapy <https://scrapy.org/>`_ and `jinja2 <http://jinja.pocoo.org/docs/dev/>`_.
 
 Installation
 ============
 .. code-block:: console
 
-    $ pip install git+https://github.com/pyanderson/uritool
+    $ pip install git+https://github.com/pyanderson/uricrawl
+
+Linux Users
+-----------
+Scrapy needs some packages.
+.. code-block:: console
+
+    $ sudo apt-get install python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev
 
 Windows Users
 -------------
-Probably one or more packages goes broke in installation (error: Microsoft Visual C++ 
-{{ version }} is required), this occurs because you are in **windows** and need to format 
+Probably one or more packages goes broke in installation (error: Microsoft Visual C++
+{{ version }} is required), this occurs because you are in **windows** and need to format
 your pc and install `Fedora <https://getfedora.org/>`_... Just kidding... You don't need install Fedora, can be
 another linux distro :P. If you still wanna/need using windows, you can accesses this
 amazing `site <http://www.lfd.uci.edu/~gohlke/pythonlibs/>`_ (This saved my life sometimes when I was windows
@@ -39,7 +47,7 @@ Basic
 -----
 .. code-block:: console
 
-    $ uritool 1025
+    $ uricrawl 1025
     2016-09-27 00:18:10 [problemspider] INFO: Code files for 1025 problem were generated.
     $ ls
     1025-where-is-the-marble.c  1025-where-is-the-marble.cpp 1025-where-is-the-marble.py
@@ -49,7 +57,7 @@ Multiple Problems
 
 .. code-block:: console
 
-    $ uritool 1302 1705
+    $ uricrawl 1302 1705
     2016-09-27 00:28:03 [problemspider] INFO: Code files for 1705 problem were generated.
     2016-09-27 00:28:03 [problemspider] INFO: Code files for 1302 problem were generated.
     $ ls
@@ -58,13 +66,13 @@ Multiple Problems
 
 Custom Template
 ---------------
-Code files are generated using **jinja2** with templates files, the are in `templates <https://github.com/pyanderson/uritool/tree/master/uritool/templates>`_ folder,
+Code files are generated using **jinja2** with templates files, the are in `templates <https://github.com/pyanderson/uricrawl/tree/master/uricrawl/templates>`_ folder,
 but you can set you own templates using **-t or --template** option with the paths
 of templates (see more in **Template** topic):
 
 .. code-block:: console
 
-    $ uritool 1450 -t mytemplate.cpp ~/mytemplate.py /home/thekiller/Documentos/myuritemplates/mytemplate.c
+    $ uricrawl 1450 -t mytemplate.cpp ~/mytemplate.py /home/thekiller/Documentos/myuritemplates/mytemplate.c
     2016-09-27 22:34:39 [problemspider] INFO: Code files for 1450 problem were generated.
     $ ls
     1450-ramesses-games.c    1450-ramesses-games.py   mytemplate.cpp
@@ -78,7 +86,7 @@ don't generate code files using default templates.
 
 .. code-block:: console
 
-    $ uritool 1780 -t mytemplate.cpp -nd
+    $ uricrawl 1780 -t mytemplate.cpp -nd
     2016-09-27 22:49:38 [problemspider] INFO: Code files for 1780 problem were generated.
     $ ls
     1780-robots-formation.cpp  mytemplate.cpp
@@ -90,7 +98,7 @@ Default problems languages crawleds is English, but you can use **-l or
 
 .. code-block:: console
 
-    $ uritool 1388 -l pt
+    $ uricrawl 1388 -l pt
     2016-09-27 22:52:21 [problemspider] INFO: Code files for 1388 problem were generated.
     $ ls
     1388-onde-estao-as-bolhas.c  1388-onde-estao-as-bolhas.cpp  1388-onde-estao-as-bolhas.py
@@ -102,7 +110,7 @@ options to tool render only this templates(this option only has effect in defaul
 
 .. code-block:: console
 
-    $ uritool 1533 -pl cpp py
+    $ uricrawl 1533 -pl cpp py
     2016-09-27 22:54:53 [problemspider] INFO: Code files for 1533 problem were generated.
     $ ls
     1533-detective-watson.cpp  1533-detective-watson.py
@@ -116,15 +124,15 @@ pattern is: {{number}}-{{title}}, just reorder like you want :D.
 
 .. code-block:: console
 
-    $ uritool 1644 -np {{number}}
+    $ uricrawl 1644 -np {{number}}
     2016-09-27 22:56:43 [problemspider] INFO: Code files for 1644 problem were generated.
     $ ls
     1644.c  1644.cpp  1644.py
-    $ uritool 1644 -np {{title}}
+    $ uricrawl 1644 -np {{title}}
     2016-09-27 23:11:51 [problemspider] INFO: Code files for 1644 problem were generated.
     $ ls
     1644.c  1644.cpp  1644.py  decode-the-strings.c  decode-the-strings.cpp  decode-the-strings.py
-    $ uritool 1644 -np {{title}}_{{number}}
+    $ uricrawl 1644 -np {{title}}_{{number}}
     2016-09-27 23:13:35 [problemspider] INFO: Code files for 1644 problem were generated.
     $ ls
     1644.c    1644.py                    decode-the-strings_1644.cpp  decode-the-strings.c    decode-the-strings.py
@@ -135,7 +143,7 @@ Full Example
 
 .. code-block:: console
 
-    $ uritool 1026 1754 -t mytemplate.cpp -nd -l pt -np {{number}}-_-{{title}}
+    $ uricrawl 1026 1754 -t mytemplate.cpp -nd -l pt -np {{number}}-_-{{title}}
     2016-09-27 23:22:47 [problemspider] INFO: Code files for 1026 problem were generated.
     2016-09-27 23:22:47 [problemspider] INFO: Code files for 1754 problem were generated.
     $ ls
@@ -159,11 +167,11 @@ So custom your templates using jinja2 syntaxe in the better way you want.
 
 Example Template
 ----------------------------
-`template.cpp <https://github.com/pyanderson/uritool/blob/master/uritool/template.cpp>`_
+`template.cpp <https://github.com/pyanderson/uricrawl/blob/master/uricrawl/template.cpp>`_
 
 Result
 ------
-`1640.cpp <https://github.com/pyanderson/uritool/blob/master/examples/1640.cpp>`_
+`1640.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/1640.cpp>`_
 
 License
 -------

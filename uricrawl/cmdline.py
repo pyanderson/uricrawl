@@ -2,7 +2,7 @@ import sys
 import os
 import argparse
 from scrapy.crawler import CrawlerProcess
-from uritool.spiders import ProblemSpider
+from uricrawl.spiders import ProblemSpider
 
 
 def main(argv=None):
@@ -11,7 +11,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         description='A tool do download problems from URI(Uri Online Judge)'
         ' and generate code files.',
-        usage='uritool [problems separated by space] {opcional} -t or '
+        usage='uricrawl [problems separated by space] {opcional} -t or '
         '--template [filepaths of templates separated by space]'
     )
     parser.add_argument(

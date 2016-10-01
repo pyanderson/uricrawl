@@ -3,7 +3,7 @@ import os
 import scrapy
 from datetime import datetime
 from slugify import slugify
-from uritool.utils import normalize_text, create_file, gen_filename
+from uricrawl.utils import normalize_text, create_file, gen_filename
 
 
 class ProblemSpider(scrapy.Spider):

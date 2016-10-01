@@ -1,7 +1,7 @@
 include README.rst
-include uritool/template.c
-include uritool/template.cpp
-include uritool/template.py
+include uricrawl/template.c
+include uricrawl/template.cpp
+include uricrawl/template.py
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
