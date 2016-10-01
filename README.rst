@@ -17,6 +17,8 @@ for file generation of problems using templates.
 
 Installation
 ============
+**If you goes install in default python, you need sudo permissions.(try first in virtual env)**
+
 .. code-block:: console
 
     $ pip install git+https://github.com/pyanderson/uricrawl
