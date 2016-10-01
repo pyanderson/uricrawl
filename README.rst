@@ -5,8 +5,7 @@ Uri Online Judge Crawler (UriCrawl)
 Command Line Tool for crawl and render templates for Problems
 -------------------------------------------------------------
 
-**incomplet, need automatized tests**
-**python 3 recommended**
+**incomplet, need automatized tests**, **python 3 recommended**
 
 Features
 ========
