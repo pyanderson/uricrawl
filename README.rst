@@ -162,7 +162,7 @@ All rended templates (defaults and custom) has some variables in context:
 * created
 * author
 
-So custom your templates using jinja2 syntaxe in the better way you want.
+So custom your templates using `jinja2 syntax <http://jinja.pocoo.org/docs/dev/templates/>`_ in the better way you want.
 
 Example Template
 ----------------------------
