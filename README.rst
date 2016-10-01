@@ -168,6 +168,13 @@ Example Template
 ----------------------------
 `template.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/template.cpp>`_
 
+Command:
+--------
+.. code-block:: console
+
+    $ uricrawl 1640 -t ~/Documentos/uricrawl/examples/template.cpp -nd
+    2016-09-30 21:49:20 [problemspider] INFO: Code files for 1640 problem were generated.
+
 Result
 ------
 `1640-hotel-booking.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/1640-hotel-booking.cpp>`_
