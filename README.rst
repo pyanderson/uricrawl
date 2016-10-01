@@ -67,7 +67,7 @@ Custom Template
 ---------------
 Code files are generated using **jinja2** with templates files, the are in `templates <https://github.com/pyanderson/uricrawl/tree/master/uricrawl>`_ folder,
 but you can set you own templates using **-t or --template** option with the paths
-of templates (see more in `Template <https://github.com/pyanderson/uricrawl/#template>`_ topic):
+of templates (see more in `Template <#template>`_ topic):
 
 .. code-block:: console
 
