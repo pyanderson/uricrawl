@@ -166,11 +166,11 @@ So custom your templates using jinja2 syntaxe in the better way you want.
 
 Example Template
 ----------------------------
-`template.cpp <https://github.com/pyanderson/uricrawl/blob/master/uricrawl/template.cpp>`_
+`template.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/template.cpp>`_
 
 Result
 ------
-`1640.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/1640.cpp>`_
+`1640-hotel-booking.cpp <https://github.com/pyanderson/uricrawl/blob/master/examples/1640-hotel-booking.cpp>`_
 
 License
 -------
